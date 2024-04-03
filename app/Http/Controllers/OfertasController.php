@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Oferta;
+use App\Models\Ofertas;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class OfertasController extends Controller
 {
@@ -12,19 +14,31 @@ class OfertasController extends Controller
      */
     public function index()
     {
-        $ofertas = Oferta::all();
-        $data = [
-            'oferta'=>$ofertas
-        ];
-        return view('OFERTAS/ofertas', $data);
+        $ofertas = DB::table('ofertas as of')->select(
+            'of.id as id',
+            'of.imagen as imagen',
+            'of.id_zona as id_zona',
+            'of.id_sucursal as id_sucursal',
+            'zo.nombre_zona as nombre_zona',
+            'su.nombre_sucursal as nombre_sucursal',
+        )
+        ->leftjoin('zonas as zo', 'zo.id', '=', 'id_zona')
+        ->leftjoin('sucursals as su', 'su.id', '=', 'id_sucursal')
+        ->get();
+        return view('OFERTAS/ofertas', ['oferta' => $ofertas]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        return view('OFERTAS/create');
+        $ofertas = DB::table('sucursals as su')->select(
+            'su.id as id',
+            'su.id_zona as id_zona',
+            'zo.nombre_zona as nombre_zona'
+        )
+        ->leftJoin('zonas as zo', 'zo.id', '=', 'id_zona')
+        ->get();
+
+        return view('OFERTAS/create', ['oferta' => $ofertas]);
     }
 
     /**
@@ -32,7 +46,12 @@ class OfertasController extends Controller
      */
     public function store(Request $request)
     {
-        $ofertas = new Oferta();
+        $ofertas = new Ofertas();
+        $ofertas->imagen = $request->imagen;
+        $ofertas->id_zona = $request->id_zona;
+        $ofertas->id_sucursal = $request->id_sucursal;
+        $ofertas->save();
+        return redirect()->route('ofertas.index');
     }
 
     /**

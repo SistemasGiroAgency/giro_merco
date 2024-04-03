@@ -10,7 +10,10 @@
 <body id="app">
     <example-component></example-component>
     <hr>
+        <h1>Sucursales</h1>
         <a href="{{route('sucursal.create')}}">Crear Sucursal</a>
+        <br>
+        <a href="{{route('zona.index')}}">Zonas</a>
     <hr>
     <table>
         <thead>

@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class SucursalController extends Controller
 {
-    public function index()
+    public function index($idzona)
     {
         $sucursal = DB::table('sucursals as su')->select(
             'su.id as id',
@@ -20,8 +20,8 @@ class SucursalController extends Controller
             'su.id_zona as id_zona',
             'zo.nombre_zona as nombre_zona',
         )
-        ->leftjoin('zonas as zo', 'zo.id', '=', 'zo.id')
-        ->where('id_zona')
+        ->leftjoin('zonas as zo', 'zo.id', '=', 'id_zona')
+        ->where('su.id_zona', $idzona)
         ->get();
         
         return view('ZONASUCURSAL.sucursal', ['sucursal' => $sucursal]);
@@ -29,17 +29,15 @@ class SucursalController extends Controller
 
     public function create()
     {
-        $zonas = DB::table('zonas as zo')->select(
+        $sucursal = DB::table('zonas as zo')->select(
             'zo.id as id',
             'zo.nombre_zona as nombre_zona',
         )
         ->get();
-        return view('ZONASUCURSAL.create', ['zonas' => $zonas]);
+
+        return view('ZONASUCURSAL.create', ['sucursal' => $sucursal]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $sucursales = new Sucursal();
@@ -50,27 +48,41 @@ class SucursalController extends Controller
         $sucursales->como_llegar = $request->como_llegar;
         $sucursales->id_zona = $request->id_zona;
         $sucursales->save();
-        return redirect()->route('zona.index');
+        return redirect()->route('sucursal.show');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function show()
     {
-        //
+        $sucursal = DB::table('sucursals as su')->select(
+            'su.id as id',
+            'su.nombre_sucursal as nombre_sucursal',
+            'su.horario as horario',
+            'su.telefono as telefono',
+            'su.mapa as mapa',
+            'su.como_llegar as como_llegar',
+            'su.id_zona as id_zona',
+            'zo.nombre_zona as nombre_zona',
+        )
+        ->leftjoin('zonas as zo', 'zo.id', '=', 'id_zona')
+        ->get();
+        
+        return view('ZONASUCURSAL.show', ['sucursal' => $sucursal]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     {
-        $edit = Sucursal::find($id);
+        $sucursales = Sucursal::find($id);
         $data = [
-            'edit'=>$edit
+            'sucursales'=>$sucursales
         ];
-        return view('ZONASUCURSAL.edit', $data);
+
+        $zona = DB::table('zonas as zo')->select(
+            'zo.id as id',
+            'zo.nombre_zona as nombre_zona',
+        )
+        ->get();
+
+        return view('ZONASUCURSAL.edit', $data, ['zona' => $zona]);
     }
 
     /**
@@ -86,7 +98,7 @@ class SucursalController extends Controller
         $sucursales->como_llegar = $request->como_llegar;
         $sucursales->id_zona = $request->id_zona;
         $sucursales->save();
-        return redirect()->route('zona.index');
+        return redirect()->route('sucursal.show');
     }
 
     /**
@@ -94,6 +106,8 @@ class SucursalController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $delete = Sucursal::find($id);
+        $delete->delete();
+        return redirect()->route('sucursal.show');
     }
 }

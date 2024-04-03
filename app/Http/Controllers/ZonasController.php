@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Sucursal;
 use App\Models\Zona;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -15,7 +16,6 @@ class ZonasController extends Controller
             'zo.nombre_zona as nombre_zona',
         )
         ->get();
-        
         return view('ZONAS.zona', ['zonas' => $zonas]);
     }
 

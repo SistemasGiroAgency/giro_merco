@@ -9,9 +9,11 @@
 </head>
 <body id="app">
     <example-component></example-component>
-    <hr>
-        <a href="{{route('zona.create')}}">Crear zona</a>
-    <hr>
+    <ul>
+        <li><a href="/admin">Admin</a></li>
+        <li><a href="{{route('zona.create')}}">Crear zona</a></li>
+        <li><a href="{{route('sucursal.show')}}">Ver Sucursales</a></li>
+    </ul>
     <table>
         @foreach ($zonas as $zona)
         <thead>
@@ -28,7 +30,7 @@
         <tbody>
             <tr>
                 <td>
-                    <a href="sucursal/{id}">Ver sucursales</a>
+                    <a href="{{route('sucursal.index', $zona->id)}}">Ver sucursales en {{$zona->nombre_zona}}</a>
                 </td>
             </tr>
         </tbody>
