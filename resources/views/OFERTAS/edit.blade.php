@@ -8,42 +8,27 @@
         <title></title>
     </head>
     <body>
-        <form action="{{route('ofertas.store')}}" method="POST">
+        <form action="{{route('ofertas.update', $edit->id)}}" method="POST">
             @csrf
+            @method('PATCH')
             <div>
                 <label for="">Imagen</label>
                 <input type="file" name="imagen">
-            </div>
-            <div>
-                <label for="">Fecha</label>
-                <input type="date" name="fecha" id="">
-            </div>
-            <div>
-                <label for="">Tipo</label>
-                <select name="tipo" id="">
-                    <option value="">Selecciona tipo</option>
-                    <option value="1">Oferta del dia</option>
-                    <option value="2">Oferta de la semana</option>
-                    <option value="3">Oferta de la temporada</option>
-                </select>
+                <input type="hidden" name="imagen" value="{{$edit->imagen}}">
             </div>
             <div>
                 <label for=""><b>Zonas</b></label><br>
                 @foreach ($zona as $zonas)
-                    <input class="zona" id="{{$zonas->id}}" type="checkbox" name="zona[]" value="{{$zonas->id}}">
+                    <input class="zona" id="{{$zonas->id}}" type="checkbox" name="id_zona" value="{{$zonas->id}}" @if($zonas->id == $edit->id_zona) checked @endif>
                     <label for="">{{$zonas->nombre_zona}}</label>
                 @endforeach
             </div>
             <div>
                 <label for=""><b>Sucursales</b></label><br>
                 @foreach ($sucursal as $sucursales)
-                    <input class="accesos" id="check{{$sucursales->id}}" data-sucursal="{{$sucursales->id_zona}}" type="checkbox" name="sucursal[]" value="{{$sucursales->id}}">
+                    <input class="accesos" id="check{{$sucursales->id}}" data-sucursal="{{$sucursales->id}}" type="checkbox" name="id_sucursal" value="{{$sucursales->id}}" @if($sucursales->id == $edit->id_sucursal) checked @endif>
                     <label for="">{{$sucursales->nombre_sucursal}}</label>   
                 @endforeach
-            </div>
-            <div>
-                <input type="checkbox" name="habilitado" id="" value="1">
-                <label for="">Habilitado</label>
             </div>
             <div>
                 <input type="submit" value="Enviar">

@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Oferta;
 use App\Models\Ofertas;
+use App\Models\Ofertas_imagen;
+use App\Models\Ofertas_zona;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -14,39 +15,108 @@ class OfertasController extends Controller
      */
     public function index()
     {
-        $ofertas = DB::table('ofertas as of')->select(
-            'of.id as id',
-            'of.imagen as imagen',
-            'of.id_zona as id_zona',
-            'of.id_sucursal as id_sucursal',
-            'zo.nombre_zona as nombre_zona',
-            'su.nombre_sucursal as nombre_sucursal',
+        $oferta = DB::table('ofertas as of')->select(
+            'of.id as id_oferta',
+            'ofz.id_zona as id_zona',
+            'ofz.id_sucursal as id_sucursal',
+            'ofi.imagen as imagen',
         )
-        ->leftjoin('zonas as zo', 'zo.id', '=', 'id_zona')
-        ->leftjoin('sucursals as su', 'su.id', '=', 'id_sucursal')
+        ->leftjoin('ofertas_zonas as ofz', 'of.id', '=', 'ofz.id_oferta')
+        ->leftjoin('ofertas_imagens as ofi', 'of.id', '=', 'ofi.id_oferta')
         ->get();
-        return view('OFERTAS/ofertas', ['oferta' => $ofertas]);
+
+        return view('OFERTAS/ofertas', ['oferta' => $oferta]);
     }
 
     public function create()
     {
-        $ofertas = DB::table('sucursals as su')->select(
-            'su.id as id',
-            'su.id_zona as id_zona',
-            'zo.nombre_zona as nombre_zona'
+        $zona = DB::table('zonas as zo')->select(
+            'zo.id as id',
+            'zo.nombre_zona as nombre_zona',
         )
-        ->leftJoin('zonas as zo', 'zo.id', '=', 'id_zona')
         ->get();
 
-        return view('OFERTAS/create', ['oferta' => $ofertas]);
+        $sucursal = DB::table('sucursals as su')->select(
+            'su.id as id',
+            'su.id_zona as id_zona',
+            'su.nombre_sucursal as nombre_sucursal',
+        )
+        ->leftJoin('zonas as zo', 'zo.id', '=', 'su.id_zona')
+        ->get();
+
+        return view('OFERTAS/create', [
+            'zona' => $zona,
+            'sucursal' => $sucursal
+        ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        $ofertas = new Ofertas();
+        $oferta = new Ofertas();
+        $oferta->fecha = $request->fecha;
+        $oferta->tipo = $request->tipo;
+        $oferta->habilitado = $request->habilitado;
+        $oferta->save();
+
+        $oferta_imagen = new Ofertas_imagen();
+        $oferta_imagen->id_oferta = $oferta->id;
+        $oferta_imagen->imagen = $request->imagen;
+        $oferta_imagen->save();
+
+        if($request->zona == null) {
+            foreach ($request->sucursal as $id_sucursal) {
+                $oferta_zona = new Ofertas_zona();
+                $oferta_zona->id_oferta = $oferta->id;
+                $oferta_zona->id_zona = $request->id_zona;
+                $oferta_zona->id_sucursal = $id_sucursal;
+                $oferta_zona->save();
+            }
+        }else {
+            foreach ($request->zona as $id_zona) {
+                foreach ($request->sucursal as $id_sucursal) {
+                    $oferta_zona = new Ofertas_zona();
+                    $oferta_zona->id_oferta = $oferta->id;
+                    $oferta_zona->id_zona = $id_zona;
+                    $oferta_zona->id_sucursal = $id_sucursal;
+                    $oferta_zona->save();
+                }
+            }    
+        }
+
+        return redirect()->route('ofertas.index');
+    }
+
+    public function show(string $id)
+    {
+        //
+    }
+
+    public function edit(string $id)
+    {
+        $edit = Ofertas::find($id);
+
+        $zona = DB::table('zonas as zo')->select(
+            'zo.id as id',
+            'zo.nombre_zona as nombre_zona',
+        )
+        ->get();
+
+        $sucursal = DB::table('sucursals as su')->select(
+            'su.id as id',
+            'su.nombre_sucursal as nombre_sucursal',
+        )
+        ->get();
+
+        return view('OFERTAS/edit', [
+            'edit' => $edit,
+            'zona' => $zona,
+            'sucursal' => $sucursal
+        ]);
+    }
+
+    public function update(Request $request, string $id)
+    {
+        $ofertas = Ofertas::find($id);
         $ofertas->imagen = $request->imagen;
         $ofertas->id_zona = $request->id_zona;
         $ofertas->id_sucursal = $request->id_sucursal;
@@ -54,35 +124,10 @@ class OfertasController extends Controller
         return redirect()->route('ofertas.index');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
-        //
+        $destroy = Ofertas::find($id);
+        $destroy->delete();
+        return redirect()->route('ofertas.index');
     }
 }

@@ -8,7 +8,10 @@
 </head>
 <body>
     <hr>
-        <a href="{{route('ofertas.create')}}">Crear oferta</a>
+        <ul>
+            <li><a href="/admin">Admin</a></li>
+            <li><a href="{{route('ofertas.create')}}">Crear oferta</a></li>
+        </ul>
     <hr>
 
     <table>
@@ -16,6 +19,12 @@
         <thead>
             <th>
                 {{$ofertas->imagen}}
+                <a href="{{route('ofertas.edit', $ofertas->id_oferta)}}">Editar</a>
+                <form action="{{route('ofertas.destroy', $ofertas->id_oferta)}}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <input type="submit" value="Eliminar">
+                </form>
             </th>
         </thead>
         <tbody>
