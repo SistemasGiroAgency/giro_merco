@@ -95,6 +95,16 @@ class OfertasController extends Controller
     {
         $edit = Ofertas::find($id);
 
+        $ofertas = DB::table('ofertas as of')->select(
+            'of.id as id',
+            'ofz.id_zona as id_zona',
+            'ofz.id_sucursal as id_sucursal',
+            'ofi.imagen as imagen',
+        )
+        ->leftJoin('ofertas_zonas as ofz', 'of.id', '=', 'ofz.id_oferta')
+        ->leftJoin('ofertas_imagens as ofi', 'of.id', '=', 'ofi.id_oferta')
+        ->get();
+
         $zona = DB::table('zonas as zo')->select(
             'zo.id as id',
             'zo.nombre_zona as nombre_zona',
@@ -103,24 +113,53 @@ class OfertasController extends Controller
 
         $sucursal = DB::table('sucursals as su')->select(
             'su.id as id',
+            'su.id_zona as id_zona',
             'su.nombre_sucursal as nombre_sucursal',
         )
+        ->leftJoin('zonas as zo', 'zo.id', '=', 'su.id_zona')
         ->get();
 
         return view('OFERTAS/edit', [
             'edit' => $edit,
             'zona' => $zona,
-            'sucursal' => $sucursal
+            'sucursal' => $sucursal,
+            'oferta' => $ofertas,
         ]);
     }
 
     public function update(Request $request, string $id)
     {
-        $ofertas = Ofertas::find($id);
-        $ofertas->imagen = $request->imagen;
-        $ofertas->id_zona = $request->id_zona;
-        $ofertas->id_sucursal = $request->id_sucursal;
-        $ofertas->save();
+        $oferta = Ofertas::find($id);
+        $oferta->fecha = $request->fecha;
+        $oferta->tipo = $request->tipo;
+        $oferta->habilitado = $request->habilitado;
+        $oferta->save();
+
+        $oferta_imagen = Ofertas_imagen::find($id);
+        $oferta_imagen->id_oferta = $oferta->id;
+        $oferta_imagen->imagen = $request->imagen;
+        $oferta_imagen->save();
+
+        if($request->zona == null) {
+            foreach ($request->sucursal as $id_sucursal) {
+                $oferta_zona = Ofertas_zona::find($id);
+                $oferta_zona->id_oferta = $oferta->id;
+                $oferta_zona->id_zona = $request->id_zona;
+                $oferta_zona->id_sucursal = $id_sucursal;
+                $oferta_zona->save();
+            }
+        }else {
+            foreach ($request->zona as $id_zona) {
+                foreach ($request->sucursal as $id_sucursal) {
+                    $oferta_zona = Ofertas_zona::find($id);
+                    $oferta_zona->id_oferta = $oferta->id;
+                    $oferta_zona->id_zona = $id_zona;
+                    $oferta_zona->id_sucursal = $id_sucursal;
+                    $oferta_zona->save();
+                }
+            }    
+        }
+
         return redirect()->route('ofertas.index');
     }
 

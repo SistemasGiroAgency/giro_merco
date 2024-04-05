@@ -21,7 +21,7 @@
             <div>
                 <label for="">Tipo</label>
                 <select name="tipo" id="">
-                    <option value="">Selecciona tipo</option>
+                    <option value="" selected>Selecciona tipo</option>
                     <option value="1">Oferta del dia</option>
                     <option value="2">Oferta de la semana</option>
                     <option value="3">Oferta de la temporada</option>

@@ -14,7 +14,7 @@
         </ul>
     <hr>
 
-    <table>
+    <table> 
         @foreach ($oferta as $ofertas)
         <thead>
             <th>
@@ -29,9 +29,10 @@
         </thead>
         <tbody>
             <tr>
+                <td><p>Id_oferta = {{$ofertas->id_oferta}}</p></td>
                 <td>
-                    {{$ofertas->id_zona}}
-                    {{$ofertas->id_sucursal}}
+                    <p>id_zona = {{$ofertas->id_zona}}</p>
+                    <p>id_sucursal = {{$ofertas->id_sucursal}}</p>
                 </td>
             </tr>
         </tbody>
