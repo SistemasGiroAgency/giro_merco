@@ -15,12 +15,16 @@
     <hr>
 
     <table> 
-        @foreach ($oferta as $ofertas)
+        @foreach ($main as $main_ofertas)
         <thead>
             <th>
-                {{$ofertas->imagen}}
-                <a href="{{route('ofertas.edit', $ofertas->id_oferta)}}">Editar</a>
-                <form action="{{route('ofertas.destroy', $ofertas->id_oferta)}}" method="POST">
+                @foreach ($oferta_imagen as $ofertaimg)
+                    <p>{{$ofertaimg->imagen}}</p>
+                @endforeach
+            </th>
+            <th> 
+                <a href="{{route('ofertas.edit', $main_ofertas->id)}}">Editar</a>
+                <form action="{{route('ofertas.destroy', $main_ofertas->id)}}" method="POST">
                     @csrf
                     @method('DELETE')
                     <input type="submit" value="Eliminar">
@@ -28,13 +32,15 @@
             </th>
         </thead>
         <tbody>
+            @foreach ($oferta as $ofertas)
             <tr>
-                <td><p>Id_oferta = {{$ofertas->id_oferta}}</p></td>
                 <td>
+                    <p>Id_oferta = {{$ofertas->id_oferta}}</p>
                     <p>id_zona = {{$ofertas->id_zona}}</p>
                     <p>id_sucursal = {{$ofertas->id_sucursal}}</p>
                 </td>
             </tr>
+            @endforeach
         </tbody>
         @endforeach
     </table>

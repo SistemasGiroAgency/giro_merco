@@ -15,17 +15,27 @@ class OfertasController extends Controller
      */
     public function index()
     {
-        $oferta = DB::table('ofertas as of')->select(
+        $mainoferta = DB::table('ofertas as of')->select(
+            'of.id as id'
+        )
+        ->get();
+
+        $oferta_zonas = DB::table('ofertas_zonas as ofz')->select(
             'of.id as id_oferta',
             'ofz.id_zona as id_zona',
             'ofz.id_sucursal as id_sucursal',
             'ofi.imagen as imagen',
         )
-        ->leftjoin('ofertas_zonas as ofz', 'of.id', '=', 'ofz.id_oferta')
+        ->leftjoin('ofertas as of', 'of.id', '=', 'ofz.id_oferta')
         ->leftjoin('ofertas_imagens as ofi', 'of.id', '=', 'ofi.id_oferta')
         ->get();
 
-        return view('OFERTAS/ofertas', ['oferta' => $oferta]);
+        $oferta_imagen = DB::table('ofertas_imagens as ofi')->select(
+            'ofi.imagen as imagen',
+        )
+        ->get();
+
+        return view('OFERTAS/ofertas', ['oferta' => $oferta_zonas, 'oferta_imagen' => $oferta_imagen, 'main' => $mainoferta]);
     }
 
     public function create()
@@ -135,14 +145,13 @@ class OfertasController extends Controller
         $oferta->habilitado = $request->habilitado;
         $oferta->save();
 
-        $oferta_imagen = Ofertas_imagen::find($id);
-        $oferta_imagen->id_oferta = $oferta->id;
+        $oferta_imagen = Ofertas_imagen::where('id_oferta', $oferta->id)->first();
         $oferta_imagen->imagen = $request->imagen;
         $oferta_imagen->save();
 
         if($request->zona == null) {
             foreach ($request->sucursal as $id_sucursal) {
-                $oferta_zona = Ofertas_zona::find($id);
+                $oferta_zona = Ofertas_zona::where('id_oferta', $oferta->id)->first();
                 $oferta_zona->id_oferta = $oferta->id;
                 $oferta_zona->id_zona = $request->id_zona;
                 $oferta_zona->id_sucursal = $id_sucursal;
@@ -151,7 +160,7 @@ class OfertasController extends Controller
         }else {
             foreach ($request->zona as $id_zona) {
                 foreach ($request->sucursal as $id_sucursal) {
-                    $oferta_zona = Ofertas_zona::find($id);
+                    $oferta_zona = Ofertas_zona::where('id_oferta', $oferta->id)->first();
                     $oferta_zona->id_oferta = $oferta->id;
                     $oferta_zona->id_zona = $id_zona;
                     $oferta_zona->id_sucursal = $id_sucursal;

@@ -1,0 +1,361 @@
+.bye-web{
+    display: none;
+}
+
+.bye-responsive{
+    display: block;
+}
+/* NAV */
+.navweb {
+    width: 100%;
+    background-color: #e9552d;
+    display: block;
+    position: fixed;
+    z-index: 999;
+}
+
+.navresponsive{
+    display: none;
+}
+
+.navweb ul {
+    list-style: none;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5%;
+}
+
+.lista a{
+    text-decoration: none;
+    color: white;
+    font-size: 2vh;
+    display: block;
+    text-align: center;
+    width: 7vw;
+}
+
+.lista a:hover{
+    font-weight: bold;
+}
+
+.desplegable{
+    display: none;
+}
+
+.tienda{
+    background-color: #79ae45;
+    border-radius: 4vh;
+    border: 2px solid white;
+}
+
+.tienda:hover{
+    animation: carrito 1s;
+}
+
+.circulo{
+    background-color: white;
+    border-radius: 100%;
+    margin:4px;
+}
+
+.nav-icons{
+    width: 100%;
+    margin: 0;
+    padding: 1vh;
+}
+
+/* SLIDER */
+.carousel-indicators [data-bs-target]{
+    width: 1vh;
+    height: 1vh;
+    border-radius: 100%;
+    transition: none;
+    opacity: 1;
+}
+
+.carousel-indicators [data-bs-target].active{
+    background-color: #e9552d;
+}
+
+.carousel-indicators{
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.carousel-control-next, .carousel-control-prev{
+    top: 50%;
+    height: 0;
+    display: block;
+    opacity: 1;
+}
+
+.carousel-control-next, .carousel-control-prev{
+    opacity: 1;
+}
+
+.posicion-ofertas{
+    position: absolute;
+    right: 0;
+    bottom: 15%;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.btn-ofertas{
+    background-color: #e9552d;
+    border-radius: 4vh;
+}
+
+.btn-ofertas p{
+    color: white;
+}
+
+.btn-wha{
+    background-color: #79ae45;
+    border-radius: 100%;
+    text-align: center;
+    width: 40%;
+}
+
+.containe-social{
+    display: block;
+    width: 100%;
+    border-radius: 4vh;
+    background-color: #79ae45;
+}
+
+.social-media{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+/* BODY */
+.tittle{
+    text-align: center;
+    color: #e9552d;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+}
+
+/* OFERTAS */
+.carousel-indicators .Ofertas-slide.active{
+    background-color: #79ae45;
+}
+
+.ofertas-img-slider img{
+    border-radius: 5vh;
+    height: 50vh;
+}
+
+.ofertas-img img{
+    border-radius: 3vh;
+    margin-top: 5%;
+}
+
+/* GARANTIAS */
+.garantias-img{
+    width: 50%;
+    position: relative;
+    top: 50%;
+}
+
+.garantias-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    text-align: center;
+    color: black;
+    background-color: #efefef;
+    border-radius: 4vh;
+    margin-bottom: 7.5%;
+    padding: 10%;
+    transition: .5s;
+}
+
+.garantias-container p{
+    height: 15vh;
+}
+
+.azul:hover{
+    background-color: #62a6da;
+    color: white;
+}
+
+.azul:hover h2{
+    transition: 1s;
+    color: white !important;
+}
+
+.verde:hover{
+    background-color: #398943;
+    color: white;
+}
+
+.verde:hover h2{
+    transition: 1s;
+    color: white !important;
+}
+
+.naranja:hover{
+    background-color: #ecad35;
+    color: white;
+}
+
+.naranja:hover h2{
+    transition: 1s;
+    color: white !important;
+}
+
+.rojo:hover{
+    background-color: #d34529;
+    color: white;
+}
+
+.rojo:hover h2{
+    transition: 1s;
+    color: white !important;
+}
+
+/* SUCURSALES */
+.container-sucursales{
+    background-color: #eaeaea;
+    border-radius: 4vh;
+    text-align: center;
+    padding: 1%;
+}
+
+.container-sucursales select{
+    border: none;
+    border-radius: 4vh;
+    margin: 0;
+    padding: 0;
+    font-size: 2vh;
+}
+
+@media only screen and (max-width: 992px) {
+
+    .bye-web{
+        display: block;
+    }
+
+    .bye-responsive{
+        display: none;
+    }
+
+    /* NAV */
+    .navresponsive{
+        width: 100%;
+        background-color: #e9552d;
+        display: block;
+        position: fixed;
+        z-index: 999;
+    }
+
+    .navweb {
+        display: none;
+    }
+
+    .desplegable{
+        display: block;
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        background-color: black;
+        left: -100%;
+        transition: 1s;
+        z-index: 9999;
+    }
+
+    .desplegable-on{
+        left: 0;
+    }
+
+    .box-carrito{
+        background-color: #79ae45;
+        border-radius: 20%;
+        border: none;
+    }
+
+    .cruz{
+        width: 100%;
+        margin: 0;
+        padding: 1vh;
+        transform: rotate(0deg);
+    }
+
+    .cruz-rotate-on{
+        animation: rotate-on 1s ease-in-out forwards;
+    }
+
+    @keyframes rotate-on{ 
+        0%{
+            transform: rotate(0deg);
+        }
+
+        100%{
+            transform: rotate(360deg);
+
+        }
+    }
+
+    .cruz-rotate-off{
+        animation: rotate-off 1s ease-in-out forwards;
+    }
+
+    @keyframes rotate-off{ 
+        0%{
+            transform: rotate(360deg);
+        }
+
+        100%{
+            transform: rotate(0deg);
+
+        }
+    }
+
+    /* SLIDER */
+    .carousel-indicators [data-bs-target]{
+        width: 1.5vh;
+        height: 1.5vh;
+    }
+
+    .carousel-control-next, .carousel-control-prev{
+        display: none;
+    }
+
+    .containe-social{
+        display: none;
+    }
+
+    .btn-wha{
+        width: 70%;
+    }
+
+    /* OFERTAS */
+    .ofertas-img-slider img{
+        padding-left: 2.5%;
+        padding-right: 2.5%;
+        border-radius: 4vh;
+        height: 20vh;
+    }
+
+    .ofertas-img img{
+        padding-left: 2.5%;
+        padding-right: 2.5%;
+        border-radius: 4vh;
+        height: 20vh;
+    }
+}
