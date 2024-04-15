@@ -414,36 +414,44 @@
         <section>
             <h1 class="tittle">Sucursales<span class="hojita"></span></h1>
             <div class="container">
-                <div class="row">
-                    <div class="col-12 container-sucursales">
-                        <div class="row ">
-                            <div class="col-3">
+                <div class="row d-flex align-items-center justify-content-center">
+                    <div class="col-10 container-sucursales">
+                        <div class="row d-flex align-items-center justify-content-center">
+                            <div class="col-3 d-flex align-items-center justify-content-center">
                                 <select name="" id="">
                                     <option value="">Selecciona tu estado</option>
                                     <option value="">Cual puto?</option>
                                 </select>
                             </div>
-                            <div class="col-4">
+                            <div class="col-3 d-flex align-items-center justify-content-center">
                                 <select name="" id="">
                                     <option value="">Selecciona tu municipio</option>
                                     <option value="">Cual puto?</option>
                                 </select>
                             </div>
-                            <div class="col-3">
+                            <div class="col-3 d-flex align-items-center justify-content-center">
                                 <select name="" id="">
                                     <option value="">Selecciona tu tienda</option>
                                     <option value="">Cual puto?</option>
                                 </select>
                             </div>
-                            <div class="col-2">
+                            <div class="col-2 d-flex align-items-center justify-content-center">
                                 <input type="submit" value="Ver Ofertas">
                             </div>
                         </div>
+                    </div>
+                    <div class="col-12">
+                        <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57533.58404836838!2d-100.3932793513672!3d25.676299700000015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x866295886ca025ad%3A0x1aba4daf970d22e5!2sMerco%20Aramberri!5e0!3m2!1ses-419!2smx!4v1713197357373!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
         </section>
     </section>
+
+    <!-- FOOTER-->
+    <!-- MERCO QUREMOS ESCUCHARTE -->
+    
+    <section></section>
 </body>
 </html>
 
