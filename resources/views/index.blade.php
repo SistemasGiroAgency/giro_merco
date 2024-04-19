@@ -267,22 +267,21 @@
                     </div>
 
                     <!-- Responsive -->
-                    <div class="col-8 bye-web" style="margin: 2vh">
-                        <div class="row">
-                            <a href="" class="w-100" style="text-decoration: none;">
-                                <div class="row btn-ofertas">
-                                    <div class="col-9 p-0 d-flex align-items-center justify-content-end">
-                                        <p class="m-0 p-0" style="font-size: 23px"><b>Aprovecha las ofertas</b></p>
-                                    </div>
-                                    <div class="col-3">
+                    <div class="col-12 bye-web" style="margin: 2vh">
+                        <div class="row d-flex align-items-center justify-content-center">
+                            <div class="col-12 col-lg-12 d-flex align-items-center justify-content-center">
+                                <a href="" style="display:block;text-decoration: none;width: fit-content;">
+                                    <div class="btn-ofertas">
+                                        <p class="p-0 d-flex align-items-center justify-content-center montserrat-bold" style="font-size: 2.02275600505689vh">Aprovecha las ofertas</p>
                                         <div class="circulo">
-                                            <img class="nav-icons" src="images/flecha-pequena-derecha-naranja.svg" alt="">
+                                            <img src="images/flecha-pequena-derecha-naranja.svg" alt="">
                                         </div>
                                     </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                         </div>
                     </div>
+                    
                     <div class="col-12 bye-web" style="margin-bottom: 2vh">
                         <div id="carouselOfertas-responsive" class="carousel slide">
                             <div class="carousel-indicators">
@@ -506,27 +505,27 @@
             <h1 class="tittle montserrat-bold">Sucursales<span class="hojita"></span></h1>
             <div class="container">
                 <div class="row d-flex align-items-center justify-content-center">
-                    <div class="col-10 container-sucursales">
+                    <div class="col-12 col-lg-10 container-sucursales">
                         <div class="row d-flex align-items-center justify-content-center">
-                            <div class="col-3 d-flex align-items-center justify-content-center">
+                            <div class="col-12 col-lg-3 d-flex align-items-center justify-content-center">
                                 <select name="" id="">
                                     <option value="">Selecciona tu estado</option>
                                     <option value="">Merco</option>
                                 </select>
                             </div>
-                            <div class="col-3 d-flex align-items-center justify-content-center">
+                            <div class="col-12 col-lg-3 d-flex align-items-center justify-content-center">
                                 <select name="" id="">
                                     <option value="">Selecciona tu municipio</option>
                                     <option value="">Merco</option>
                                 </select>
                             </div>
-                            <div class="col-3 d-flex align-items-center justify-content-center">
+                            <div class="col-12 col-lg-3 d-flex align-items-center justify-content-center">
                                 <select name="" id="">
                                     <option value="">Selecciona tu tienda</option>
                                     <option value="">Merco</option>
                                 </select>
                             </div>
-                            <div class="col-2 d-flex align-items-center justify-content-center">
+                            <div class="col-6 col-lg-2 d-flex align-items-center justify-content-center">
                                 <input type="submit" value="Ver Ofertas">
                             </div>
                         </div>
@@ -561,10 +560,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-6 p-0 bye-responsive">
+                <div class="col-12 col-lg-6 p-0 bye-responsive">
                     <div class="pepito-tienda"></div>
                 </div>
-                <div class="col-6 p-0 bye-responsive">
+                <div class="col-12 col-lg-6 p-0 bye-responsive">
                     <div class="pepito-dentro"></div>
                 </div>
                 <div class="col-11 col-lg-6 p-0">
@@ -602,10 +601,10 @@
     <section id="seelprimero">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-6 text-center" style="padding: 2%">
+                <div class="col-6 text-center bye-responsive" style="padding: 2%">
                     <img src="images/celular.png" alt="" class="w-100 h-100">
                 </div>
-                <div class="col-6">
+                <div class="col-12 col-lg-6">
                     <div class="forms-seelprimero">
                         <h2>!Sé el primero en enterarte</h2>
                         <h1 class="montserrat-bold" style="font-style: italic;color: #d55328;">de nuestros preciazos!</h1>
@@ -650,12 +649,16 @@
                         </form>
                     </div>
                 </div>
+                <div class="col-12 text-center bye-web" style="padding: 2%">
+                    <img src="images/celular.png" alt="" class="w-100 h-100">
+                </div>
             </div>
         </div>
     </section>
     <!-- FOTTER -->
     <section>
-        <footer id="fondo-footer">
+        <!-- FOTTER WEB -->
+        <footer id="fondo-footer" class="bye-responsive">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-3 d-flex align-items-center justify-content-center">
@@ -730,6 +733,120 @@
                 </div>
             </div>
         </footer>
+
+        <!-- FOTTER RESPONSIVE -->
+        <footer id="fondo-footer" class="bye-web">
+            <div class="container-fluid">
+                <div class="row d-flex align-items-center justify-content-center">
+                    <div class="col-12 d-flex align-items-center justify-content-center" style="padding: 5%">
+                        <img src="images/logo-merco-blanco.png" alt="" style="width: 50%">
+                    </div>
+                    <div class="col-10 d-flex align-items-center justify-content-center">
+                        <a href="" style="text-decoration: none;width: 70%;display:block">
+                            <div class="row tienda" style="margin-top: 2vh;margin-bottom: 2vh">
+                                <div class="col-3">
+                                    <img class="nav-icons" src="images/carrito-de-compras.svg" alt="">
+                                </div>
+                                <div class="col-6 d-flex align-items-center justify-content-center">
+                                    <p class="m-0 p-0" style="color: white; font-size: 1.5170670037926675vh;"><b>Tienda en Línea</b></p>
+                                </div>
+                                <div class="col-3">
+                                    <div class="circulo">
+                                        <img class="nav-icons" src="images/flecha-pequena-derecha-naranja.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12" style="padding: 5vh">
+                        <div class="row d-flex align-items-center justify-content-center">
+                            <div class="col-12">
+                                <ul>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="dropdownPages" data-bs-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">Atajos</a>
+                                        <ul class="dropdown-menu list-unstyled border p-3" aria-labelledby="dropdownPages">
+                                          <li>
+                                            <a href="" class="dropdown-item item-anchor" style="color: black">Sucursales</a>
+                                          </li>
+                                          <li>
+                                            <a href="" class="dropdown-item item-anchor" style="color: black">Facturación</a>
+                                          </li>
+                                          <li>
+                                            <a href="" class="dropdown-item item-anchor" style="color: black">Garantías</a>
+                                          </li>
+                                          <li>
+                                            <a href="" class="dropdown-item item-anchor" style="color: black">Ofertas</a>
+                                          </li>
+                                          <li>
+                                            <a href="" class="dropdown-item item-anchor" style="color: black">Conócenos</a>
+                                          </li>
+                                          <li>
+                                            <a href="" class="dropdown-item item-anchor" style="color: black">Blog</a>
+                                          </li>
+                                          <li>
+                                            <a href="" class="dropdown-item item-anchor" style="color: black">Contacto</a>
+                                          </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-12">
+                                <ul>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="dropdownPages" data-bs-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">Atajos</a>
+                                        <ul class="dropdown-menu list-unstyled border p-3" aria-labelledby="dropdownPages">
+                                          <li>
+                                            <a href="" class="dropdown-item item-anchor" style="color: black">Colaboradores</a>
+                                          </li>
+                                          <li>
+                                            <a href="" class="dropdown-item item-anchor" style="color: black">Renta de locales</a>
+                                          </li>
+                                          <li>
+                                            <a href="" class="dropdown-item item-anchor" style="color: black">Proveedores</a>
+                                          </li>
+                                          <li>
+                                            <a href="" class="dropdown-item item-anchor" style="color: black">Vacantes</a>
+                                          </li>
+                                          <li>
+                                            <a href="" class="dropdown-item item-anchor" style="color: black">Formas de pago</a>
+                                          </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-4">
+                                <p class="text-center montserrat-bold p-0" style="font-style: italic">Síguenos en <br> nuestras redes</p>
+                                <ul class="social-media p-0 m-0">
+                                    <li>
+                                        <a href="">
+                                            <img width="24" height="24" src="images/facebook.svg" alt="">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <img width="24" height="24" src="images/instagram.svg" alt="">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <img width="24" height="24" src="images/youtube.svg" alt="">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <img width="24" height="24" src="images/tik-tok.svg" alt="">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12 final-footer">
@@ -760,4 +877,13 @@
         desplegable.classList.remove("desplegable-on")
         cruz.classList.add("cruz-rotate-off");
     })
+</script>
+
+<script>
+    const atajo = document.getElementById("atajo");
+    const atajo_on = document.getElementById("atajo-on");
+
+    atajo.addEventListener("click", function(){
+        atajo_on.classList.add("atajo-on");
+    });
 </script>
