@@ -414,88 +414,87 @@
             </div>
             <div class="container bye-web">
                 <div class="row">
-                    <div class="col-12" style="margin-bottom: 2vh">
+                    <div class="col-12 d-flex align-items-center justify-content-center" style="margin-bottom: 2vh">
                         <div id="garantias-responsive" class="carousel slide d-flex align-items-center justify-content-center">
-                            <div class="carousel-inner ofertas-img">
+                            <div class="carousel-inner">
                               <div class="carousel-item active">
-                                <div class="garantias-img text-center" style="top: 10vh; width:100%;">
-                                    <img src="images/caducidad.png" alt="">
-                                </div>
-                                <a href="" style="text-decoration: none">
-                                    <div class="garantias-container azul">
-                                        <div>
-                                            <div><h2 class="montserrat-bold" style="color: #62a6da">Caducidad</h2></div>
-                                            <div>
-                                                <p>Merco ofrece un servicio de 
-                                                    reemplazo gratuito para 
-                                                    productos vencidos, siempre y cuando se presenten en su 
-                                                    empaque original y cerrado. 
-                                                    </p>
+                                <div class="row">
+                                    <div class="col-12" style="text-align: center; height:10vh;">
+                                        <img class="garantias-img" src="images/caducidad.png" alt="">
+                                    </div>
+                                    <div class="col-12">
+                                        <a href="" class="d-flex align-items-center justify-content-center" style="text-decoration: none">
+                                            <div class="garantias-container" style="background-color: #5fb9fd">
+                                                <div>
+                                                    <h2 class="montserrat-bold" style="color: white">Caducidad</h2>
+                                                    <p style="color: white">Merco ofrece un servicio de reemplazo gratuito para productos vencidos, siempre y cuando se presenten en su empaque original y cerrado.</p>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </a>
-                              </div>
-                              <div class="carousel-item">
-                                <div class="col-12 col-lg-3">
-                                    <div class="row">
-                                        <div class="col-12" style="text-align: center">
-                                            <img class="garantias-img" src="images/caducidad.png" alt="">
-                                        </div>
-                                        <div class="col-12">
-                                            <a href="" style="text-decoration: none">
-                                                <div class="garantias-container azul">
-                                                    <div>
-                                                        <div><h2 class="montserrat-bold" style="color: #62a6da">Caducidad</h2></div>
-                                                        <div>
-                                                            <p>Merco ofrece un servicio de 
-                                                                reemplazo gratuito para 
-                                                                productos vencidos, siempre y cuando se presenten en su 
-                                                                empaque original y cerrado. 
-                                                                </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
+                                        </a>
                                     </div>
                                 </div>
                               </div>
                               <div class="carousel-item">
-                                <div class="col-12 col-lg-3">
-                                    <div class="row">
-                                        <div class="col-12" style="text-align: center">
-                                            <img class="garantias-img" src="images/caducidad.png" alt="">
-                                        </div>
-                                        <div class="col-12">
-                                            <a href="" style="text-decoration: none">
-                                                <div class="garantias-container azul">
-                                                    <div>
-                                                        <div><h2 class="montserrat-bold" style="color: #62a6da">Caducidad</h2></div>
-                                                        <div>
-                                                            <p>Merco ofrece un servicio de 
-                                                                reemplazo gratuito para 
-                                                                productos vencidos, siempre y cuando se presenten en su 
-                                                                empaque original y cerrado. 
-                                                                </p>
-                                                        </div>
-                                                    </div>
+                                <div class="row">
+                                    <div class="col-12" style="text-align: center; height:10vh;">
+                                        <img class="garantias-img" src="images/frescura.png" alt="">
+                                    </div>
+                                    <div class="col-12">
+                                        <a href="" class="d-flex align-items-center justify-content-center" style="text-decoration: none">
+                                            <div class="garantias-container" style="background-color: #4b8d53">
+                                                <div>
+                                                    <h2 class="montserrat-bold" style="color: white">Frescura</h2>
+                                                    <p style="color: white">La frescura del producto implica que ha sido recién elaborado, procesado,cosechado, o horneado, asegurando su consumo seguro.</p>
                                                 </div>
-                                            </a>
-                                        </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-12" style="text-align: center; height:10vh;">
+                                        <img class="garantias-img" src="images/satisfaccion.png" alt="">
+                                    </div>
+                                    <div class="col-12">
+                                        <a href="" class="d-flex align-items-center justify-content-center" style="text-decoration: none">
+                                            <div class="garantias-container" style="background-color: #ecbd63">
+                                                <div>
+                                                    <h2 class="montserrat-bold" style="color: white">Satisfacción</h2>
+                                                    <p style="color: white">Te damos 30 días para regresar el artículo que no haya sido de tu total satisfacción y te devolvemos el efectivo inmediatamente.</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-12" style="text-align: center; height:10vh;">
+                                        <img class="garantias-img" src="images/precio.png" alt="">
+                                    </div>
+                                    <div class="col-12">
+                                        <a href="" class="d-flex align-items-center justify-content-center" style="text-decoration: none">
+                                            <div class="garantias-container" style="background-color: #d5614a;">
+                                                <div>
+                                                    <h2 class="montserrat-bold" style="color: white">Precio Bajo</h2>
+                                                    <p style="color: white">Merco ofrece el precio más bajo, igualando ofertas de la competencia y reembolsando diferencias dentro de 10 días de compra para compras al menudeo.</p>
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
                               </div>
                             </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#garantias-responsive" data-bs-slide="prev" style="top: auto;bottom: auto;">
-                                <div class="carousel-control-prev-icon" aria-hidden="true"></div>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#garantias-responsive" data-bs-slide="next" style="top: auto;bottom: auto;">
-                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                              <span class="visually-hidden">Next</span>
-                            </button>
                         </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#garantias-responsive" data-bs-slide="prev" style="top: auto;bottom: auto;">
+                            <div class="carousel-control-prev-icon" aria-hidden="true"></div>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#garantias-responsive" data-bs-slide="next" style="top: auto;bottom: auto;">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -549,11 +548,11 @@
                             <h5 class="montserrat-bold p-0 m-0">En Merco quremos<span class="hoja-blanca"></span></h3>
                             <h1 class="montserrat-bold  p-0 m-0">escucharte</h1>
                             <p>Si deseas hacer tus comentarios puedes <br> hacerlo en cualquiera de nuestras redes sociales.</p>
-                            <div class="row">
-                                <div class="col-6 d-flex align-items-center justify-content-end">
+                            <div class="row d-flex align-items-center justify-content-center">
+                                <div class="col-12 col-lg-3 d-flex align-items-center justify-content-center">
                                     <button class="btn-wha-escu"><span></span>Whatsapp</button>
                                 </div>
-                                <div class="col-6 d-flex align-items-center justify-content-initail">
+                                <div class="col-12 col-lg-3 d-flex align-items-center justify-content-center">
                                     <button class="btn-mess-escu"><span></span>Messenger</button>
                                 </div>
                             </div>
@@ -877,13 +876,4 @@
         desplegable.classList.remove("desplegable-on")
         cruz.classList.add("cruz-rotate-off");
     })
-</script>
-
-<script>
-    const atajo = document.getElementById("atajo");
-    const atajo_on = document.getElementById("atajo-on");
-
-    atajo.addEventListener("click", function(){
-        atajo_on.classList.add("atajo-on");
-    });
 </script>

@@ -1,12 +1,12 @@
 /* FONTS */
-*{
+* {
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
 }
 
-.montserrat-bold{
+.montserrat-bold {
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-weight: 900;
@@ -14,11 +14,11 @@
 }
 
 /* OTROS ESTILOS */
-.bye-web{
+.bye-web {
     display: none;
 }
 
-.bye-responsive{
+.bye-responsive {
     display: block;
 }
 
@@ -31,55 +31,55 @@
     z-index: 999;
 }
 
-.navresponsive{
+.navresponsive {
     display: none;
 }
 
-.lista{
+.lista {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 5%;
 }
 
-.lista a{
+.lista a {
     text-decoration: none;
     color: white;
 }
 
-.dropdown-item:hover{
+.dropdown-item:hover {
     background-color: #e9552d;
     color: white !important;
 }
 
-.desplegable{
+.desplegable {
     display: none;
 }
 
-.tienda{
+.tienda {
     background-color: #79ae45;
     border-radius: 4vh;
     border: 2px solid white;
 }
 
-.tienda:hover{
+.tienda:hover {
     animation: carrito 1s;
 }
 
-.circulo{
+.circulo {
     background-color: white;
     border-radius: 100%;
-    margin:4px;
+    margin: 4px;
 }
 
-.nav-icons{
+.nav-icons {
     width: 100%;
     margin: 0;
     padding: 1vh;
 }
 
 /* SLIDER */
-.carousel-indicators [data-bs-target]{
+.carousel-indicators [data-bs-target] {
     width: 1vh;
     height: 1vh;
     border-radius: 100%;
@@ -87,26 +87,28 @@
     opacity: 1;
 }
 
-.carousel-indicators [data-bs-target].active{
+.carousel-indicators [data-bs-target].active {
     background-color: #e9552d;
 }
 
-.carousel-indicators{
+.carousel-indicators {
     margin-left: 0;
     margin-right: 0;
 }
 
-.carousel-control-next, .carousel-control-prev{
+.carousel-control-next,
+.carousel-control-prev {
     top: 50%;
     height: 0;
     opacity: 1;
 }
 
-.carousel-control-next, .carousel-control-prev{
+.carousel-control-next,
+.carousel-control-prev {
     opacity: 1;
 }
 
-.posicion-ofertas{
+.posicion-ofertas {
     position: absolute;
     right: 0;
     bottom: 15%;
@@ -118,7 +120,7 @@
     margin: 0;
 }
 
-.btn-ofertas{
+.btn-ofertas {
     background-color: #e9552d;
     border-radius: 4vh;
     width: fit-content;
@@ -127,26 +129,26 @@
     padding-right: 1vw;
 }
 
-.btn-ofertas p{
+.btn-ofertas p {
     color: white;
     margin: 0;
     margin-left: 4px;
     margin-right: 4px;
 }
 
-.btn-ofertas img{
+.btn-ofertas img {
     width: 2rem;
     margin: 0;
     padding: 1vh;
 }
 
-.btn-position{
+.btn-position {
     position: fixed;
     width: 100%;
     height: 100vh;
 }
 
-.btn-wha{
+.btn-wha {
     position: fixed;
     width: 10vh;
     height: 10vh;
@@ -162,7 +164,7 @@
     padding: 2vh;
 }
 
-.containe-social{
+.containe-social {
     display: block;
     width: 10vw;
     border-radius: 4vh;
@@ -170,7 +172,7 @@
     background-color: #79ae45;
 }
 
-.social-media{
+.social-media {
     list-style: none;
     display: flex;
     align-items: center;
@@ -180,33 +182,33 @@
     padding-right: 10%;
 }
 
-.carousel-control-prev-icon{
+.carousel-control-prev-icon {
     border-radius: 100%;
     background: white url("/images/flecha-pequena-izquierda.svg") center center/contain no-repeat;
 }
 
-.carousel-control-prev-icon:hover{
+.carousel-control-prev-icon:hover {
     background: #e9552d url("/images/flecha-pequena-izquierda-blanco.svg") center center/contain no-repeat;
 }
 
-.carousel-control-next-icon{
+.carousel-control-next-icon {
     border-radius: 100%;
     background: white url("/images/flecha-pequena-derecha.svg") center center/contain no-repeat;
 }
 
-.carousel-control-next-icon:hover{
+.carousel-control-next-icon:hover {
     background: #e9552d url("/images/flecha-pequena-derecha-blanco.svg") center center/contain no-repeat;
 }
 
 /* BODY */
-.tittle{
+.tittle {
     text-align: center;
     color: #e9552d;
     margin-top: 2.5%;
     margin-bottom: 2.5%;
 }
 
-.hojita{
+.hojita {
     background: url('/images/hojademerco.png') center center/contain no-repeat;
     display: inline-block;
     width: 2rem;
@@ -215,35 +217,35 @@
     margin-right: 1vw;
 }
 
-#body-fondo{
+#body-fondo {
     background: url('/images/Patron.png') center center/cover no-repeat;
     width: 100%;
     height: max-content;
 }
 
 /* OFERTAS */
-.carousel-indicators .Ofertas-slide.active{
+.carousel-indicators .Ofertas-slide.active {
     background-color: #79ae45;
 }
 
-.ofertas-img-slider img{
+.ofertas-img-slider img {
     border-radius: 5vh;
     height: 50vh;
 }
 
-.ofertas-img img{
+.ofertas-img img {
     border-radius: 3vh;
     margin-top: 5%;
 }
 
-/* GARANTIAS */
-.garantias-img{
+/* GARANTÍAS */
+.garantias-img {
     width: 50%;
     position: relative;
     top: 50%;
 }
 
-.garantias-container{
+.garantias-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -257,59 +259,59 @@
     transition: .5s;
 }
 
-.garantias-container p{
+.garantias-container p {
     height: 15vh;
 }
 
-.azul:hover{
+.azul:hover {
     background-color: #62a6da;
     color: white;
 }
 
-.azul:hover h2{
+.azul:hover h2 {
     transition: 1s;
     color: white !important;
 }
 
-.verde:hover{
+.verde:hover {
     background-color: #398943;
     color: white;
 }
 
-.verde:hover h2{
+.verde:hover h2 {
     transition: 1s;
     color: white !important;
 }
 
-.naranja:hover{
+.naranja:hover {
     background-color: #ecad35;
     color: white;
 }
 
-.naranja:hover h2{
+.naranja:hover h2 {
     transition: 1s;
     color: white !important;
 }
 
-.rojo:hover{
+.rojo:hover {
     background-color: #d34529;
     color: white;
 }
 
-.rojo:hover h2{
+.rojo:hover h2 {
     transition: 1s;
     color: white !important;
 }
 
 /* SUCURSALES */
-.container-sucursales{
+.container-sucursales {
     background-color: #eaeaea;
     border-radius: 4vh;
     text-align: center;
     padding: 1%;
 }
 
-.container-sucursales select{
+.container-sucursales select {
     border: none;
     border-radius: 4vh;
     margin: 0;
@@ -319,7 +321,7 @@
     text-align: center;
 }
 
-.container-sucursales input{
+.container-sucursales input {
     border-radius: 4vh;
     border: none;
     padding: 1vh;
@@ -328,7 +330,7 @@
     width: 80%;
 }
 
-.mapa{
+.mapa {
     width: 100%;
     border-radius: 4vh;
     margin-top: 5%;
@@ -336,7 +338,7 @@
 }
 
 /* MERCO QUEREMOS ESCUCHARTE */
-.merco-escucharte{
+.merco-escucharte {
     background: url('/images/fondo-escucharte.png') center center/cover no-repeat;
     width: 100%;
     height: 50vh;
@@ -344,50 +346,52 @@
     text-align: center;
 }
 
-.merco-escucharte h5{
+.merco-escucharte h5 {
     font-size: 4vh;
 }
 
-.merco-escucharte h1{
+.merco-escucharte h1 {
     font-size: 12vh;
     font-style: italic;
 }
 
-.pepito-tienda{
+.pepito-tienda {
     background: url('/images/pepito-tienda.png') center center/cover no-repeat;
     width: 100%;
     height: 50vh;
 }
 
-.merco-naranja{
+.merco-naranja {
     background: url('/images/fondo-naranja.png') center center/cover no-repeat;
     width: 100%;
-    height: 100%;
+    height: 74vh;
     color: white;
     padding: 3vh;
 }
 
-.merco-naranja h1{
+.merco-naranja h1 {
     font-size: 3vh;
 }
 
-.merco-naranja p{
+.merco-naranja p {
     font-size: 1.5vh;
 }
 
-.pepito-dentro{
+.pepito-dentro {
     background: url('/images/pepito-dentro.png') center center/cover no-repeat;
     width: 101%;
-    height: 71.87104930467763vh;
+    height: 74vh;
 }
 
-.hoja-blanca{
+.hoja-blanca {
     background: url('/images/hoja-blanca.png') center center/contain no-repeat;
     display: inline-block;
-    width: 10rem; height: 5rem;
+    width: 10rem;
+    height: 5rem;
 }
 
-.btn-wha-escu{
+.btn-wha-escu {
+    font-size: auto;
     border: 1px solid white;
     border-radius: 4vh;
     display: flex;
@@ -396,9 +400,11 @@
     background-color: #57bb70;
     color: white;
     padding: 1vh;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
-.btn-wha-escu span{
+.btn-wha-escu span {
     background: url('/images/whatsapp.svg') center center/contain no-repeat;
     display: inline-block;
     width: 2rem;
@@ -407,7 +413,7 @@
     margin-right: 5%;
 }
 
-.btn-mess-escu{
+.btn-mess-escu {
     border: 1px solid white;
     border-radius: 4vh;
     display: flex;
@@ -416,34 +422,36 @@
     background-color: #4994ec;
     color: white;
     padding: 1vh;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
-.btn-mess-escu span{
+.btn-mess-escu span {
     background: url('/images/facebook-messenger.svg') center center/contain no-repeat;
     display: inline-block;
     width: 2rem;
-    height: 2rem;  
+    height: 2rem;
     margin-left: 5%;
-    margin-right: 5%; 
+    margin-right: 5%;
 }
 
-.pasos{
+.pasos {
     padding-left: 5vh;
     padding-right: 5vh;
 }
 
-.pasos h1{
+.pasos h1 {
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-weight: 900;
     font-style: normal;
 }
 
-.pasos p{
+.pasos p {
     font-size: 1.8vh;
 }
 
-.hagamos-suceda button{
+.hagamos-suceda button {
     border: none;
     border-top-left-radius: 4vh;
     border-bottom-left-radius: 4vh;
@@ -453,7 +461,7 @@
 }
 
 /* SÉ EL PRIMERO */
-#seelprimero{
+#seelprimero {
     background: url('/images/fondo-seelprimero.jpg') center center/cover no-repeat;
     width: 100%;
     height: 100%;
@@ -461,11 +469,12 @@
     color: white;
 }
 
-.forms-seelprimero{
+.forms-seelprimero {
     padding: 10%;
 }
 
-.forms-seelprimero input, select{
+.forms-seelprimero input,
+select {
     width: 100%;
     padding: 1vh;
     padding-left: 2vh;
@@ -474,7 +483,7 @@
     margin-bottom: 2vh;
 }
 
-.btn-suscribirme{
+.btn-suscribirme {
     background-color: white;
     border-radius: 4vh;
     display: flex;
@@ -483,34 +492,35 @@
     padding: 0.5vh;
 }
 
-.btn-suscribirme p{
+.btn-suscribirme p {
     color: #79ae45;
     margin: 0;
     margin-left: 4px;
     margin-right: 4px;
 }
 
-.btn-suscribirme img{
+.btn-suscribirme img {
     width: 2rem;
     margin: 0;
     padding: .5vh;
 }
 
 /* FOOTER */
-#fondo-footer{
+#fondo-footer {
     background: url('/images/fondo-footer.jpg') center center/cover no-repeat;
     width: 100%;
     height: 100%;
     color: white;
 }
 
-#fondo-footer a, li{
+#fondo-footer a,
+li {
     color: white;
     text-decoration: none;
     list-style: none;
 }
 
-.final-footer{
+.final-footer {
     background-color: #79ae45;
     color: white;
     padding: 1vh;
@@ -519,20 +529,20 @@
 
 @media only screen and (max-width: 992px) {
 
-    .bye-web{
+    .bye-web {
         display: block;
     }
 
-    .bye-responsive{
+    .bye-responsive {
         display: none;
     }
-    
-    .btn-ofertas img{
+
+    .btn-ofertas img {
         width: 3rem;
     }
 
     /* NAV */
-    .navresponsive{
+    .navresponsive {
         width: 100%;
         background-color: #e9552d;
         display: block;
@@ -544,7 +554,7 @@
         display: none;
     }
 
-    .desplegable{
+    .desplegable {
         display: block;
         width: 100%;
         height: 100vh;
@@ -555,76 +565,84 @@
         z-index: 9999;
     }
 
-    .desplegable-on{
+    .desplegable-on {
         left: 0;
     }
 
-    .box-carrito{
+    .box-carrito {
         background-color: #79ae45;
         border-radius: 20%;
         border: none;
     }
 
-    .cruz{
+    .cruz {
         width: 100%;
         margin: 0;
         padding: 1vh;
         transform: rotate(0deg);
     }
 
-    .cruz-rotate-on{
+    .cruz-rotate-on {
         animation: rotate-on 1s ease-in-out forwards;
     }
 
-    @keyframes rotate-on{ 
-        0%{
+    @keyframes rotate-on {
+        0% {
             transform: rotate(0deg);
         }
 
-        100%{
+        100% {
             transform: rotate(360deg);
 
         }
     }
 
-    .cruz-rotate-off{
+    .cruz-rotate-off {
         animation: rotate-off 1s ease-in-out forwards;
     }
 
-    @keyframes rotate-off{ 
-        0%{
+    @keyframes rotate-off {
+        0% {
             transform: rotate(360deg);
         }
 
-        100%{
+        100% {
             transform: rotate(0deg);
 
         }
     }
 
     /* SLIDER */
-    .carousel-indicators [data-bs-target]{
+    .carousel-indicators [data-bs-target] {
         width: 1.5vh;
         height: 1.5vh;
     }
 
-    .containe-social{
+    .containe-social {
         display: none;
     }
 
-    .btn-wha{
+    .btn-wha {
         width: 70%;
     }
 
+    .carousel-control-prev-icon {
+        background: #e9552d url("/images/flecha-pequena-izquierda-blanco.svg") center center/contain no-repeat;
+    }
+
+    .carousel-control-next-icon {
+        background: #e9552d url("/images/flecha-pequena-derecha-blanco.svg") center center/contain no-repeat;
+    }
+
     /* OFERTAS */
-    .ofertas-img-slider img{
+    .ofertas-img-slider img {
         padding-left: 2.5%;
         padding-right: 2.5%;
         border-radius: 4vh;
         height: 20vh;
     }
 
-    .ofertas-img img{
+    .ofertas-img img {
         padding-left: 2.5%;
         padding-right: 2.5%;
         border-radius: 4vh;
@@ -632,39 +650,76 @@
     }
 
     /* SUCURSALES */
-    .container-sucursales{
+    .container-sucursales {
         padding: 5%;
     }
 
-    .container-sucursales select{
+    .container-sucursales select {
         margin-bottom: 1.5vh;
     }
 
+    /* GARANTÍAS */
+    .garantias-img {
+        width: 50%;
+        top: 0;
+    }
+
+    .garantias-container{
+        width: 80%;
+    }
+
+    .garantias-container p {
+        height: auto;
+    }
+
     /* MERCO QUEREMOS ESCUCHARTE */
-    .merco-escucharte{
+    .merco-escucharte {
         padding: 5%;
         border-radius: 4vh;
         margin-top: 2.5%;
         margin-bottom: 2.5%;
     }
 
-    .merco-escucharte h5{
+    .merco-escucharte h5 {
         font-size: 2vh;
     }
-    
-    .merco-escucharte h1{
+
+    .merco-escucharte h1 {
         font-size: 5vh;
     }
 
-    .hoja-blanca{
-        width: 5rem; 
+    .hoja-blanca {
+        width: 5rem;
         height: 2rem;
     }
 
-    .merco-naranja{
+    .merco-naranja {
         padding: 5%;
+        height: auto;
         border-radius: 4vh;
         margin-top: 2.5%;
         margin-bottom: 2.5%;
+    }
+
+    .btn-wha-escu {
+        font-size: x-large;
+        margin-top: 1vh;
+        margin-bottom: 1vh;
+    }
+
+    .btn-wha-escu span {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .btn-mess-escu {
+        font-size: x-large;
+        margin-top: 1vh;
+        margin-bottom: 1vh;
+    }
+
+    .btn-mess-escu span {
+        width: 4rem;
+        height: 4rem;
     }
 }
