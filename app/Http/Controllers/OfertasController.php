@@ -15,11 +15,6 @@ class OfertasController extends Controller
      */
     public function index()
     {
-        $mainoferta = DB::table('ofertas as of')->select(
-            'of.id as id'
-        )
-        ->get();
-
         $oferta_zonas = DB::table('ofertas_zonas as ofz')->select(
             'of.id as id_oferta',
             'ofz.id_zona as id_zona',
@@ -30,12 +25,7 @@ class OfertasController extends Controller
         ->leftjoin('ofertas_imagens as ofi', 'of.id', '=', 'ofi.id_oferta')
         ->get();
 
-        $oferta_imagen = DB::table('ofertas_imagens as ofi')->select(
-            'ofi.imagen as imagen',
-        )
-        ->get();
-
-        return view('OFERTAS/ofertas', ['oferta' => $oferta_zonas, 'oferta_imagen' => $oferta_imagen, 'main' => $mainoferta]);
+        return view('OFERTAS/ofertas', ['oferta_zonas' => $oferta_zonas]);
     }
 
     public function create()
