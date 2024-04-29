@@ -17,6 +17,10 @@
         <title>Merco | Ofertas</title>
     </head>
     <body style="height: 100vh">
+
+        <div id="loadingScreen">
+            Cargando...
+        </div>
         
         <!-- BTN WHA -->
         <a href="" class="btn-wha bye-responsive">
@@ -234,6 +238,16 @@
                 </button>
             </div>
         </section>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                document.getElementById('loadingScreen').style.display = 'flex';
+            });
+            
+            window.onload = function() {
+                document.getElementById('loadingScreen').style.display = 'none';
+            };
+        </script>
 
         <script>
             const menu = document.getElementById("menu");

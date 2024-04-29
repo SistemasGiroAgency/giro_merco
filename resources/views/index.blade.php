@@ -18,6 +18,11 @@
     </head>
 
     <body>
+
+        <div id="loadingScreen">
+            Cargando...
+        </div>
+
         <!-- BTN WHA -->
         <a href="" class="btn-wha bye-responsive">
             <img src="images/whatsapp.svg" alt="" class="w-100">
@@ -837,6 +842,16 @@
             </div>
         </section>
     </body>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById('loadingScreen').style.display = 'flex';
+        });
+        
+        window.onload = function() {
+            document.getElementById('loadingScreen').style.display = 'none';
+        };
+    </script>
 
     <script>
         const menu = document.getElementById("menu");
