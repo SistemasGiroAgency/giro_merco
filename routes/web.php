@@ -4,8 +4,6 @@ use App\Http\Controllers\ZonasController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [App\Http\Controllers\MercoController::class, 'index']);
-
 Auth::routes();
 
 Route::get('admin', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -28,12 +26,9 @@ Route::get('/admin', function() {
     return view('home');
 })->name('home')->middleware('auth');
 
-
-
-
-//Rutas
-
 //Rutas Generales
+Route::get('/', [App\Http\Controllers\MercoController::class, 'index']);
+Route::get('/ofertas', [App\Http\Controllers\MercoController::class, 'ofertas']);
 
 //CRUD Ofertas
 Route::get('admin/ofertas', [App\Http\Controllers\OfertasController::class, 'index'])->name('ofertas.index')->middleware('auth');
